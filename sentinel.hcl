@@ -1,7 +1,7 @@
 policy "cost-under-100" {
-  enforcement_level = "hard-mandatory"
+  enforcement_level = "soft-mandatory"
 }
 
 policy "restrict-aws-region" {
-  enforcement_level = "soft-mandatory"
+  enforcement_level = "hard-mandatory"
 }
