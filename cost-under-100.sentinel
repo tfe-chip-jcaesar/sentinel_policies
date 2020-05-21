@@ -1,8 +1,13 @@
 import "tfrun"
 import "decimal"
+import "type"
 
-delta_monthly_cost = decimal.new(tfrun.cost_estimate.delta_monthly_cost)
+if type_of(tfrun.cost_estimate.delta_monthly_cost) is not undefined {
+	delta_monthly_cost = decimal.new(tfrun.cost_estimate.delta_monthly_cost)
+} else {
+	delta_monthly_cost = decimal.new(0)
+}
 
 main = rule {
-    delta_monthly_cost.less_than(100)
+	delta_monthly_cost.less_than(100)
 }
